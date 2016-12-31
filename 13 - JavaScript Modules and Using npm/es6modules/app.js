@@ -2,12 +2,10 @@
 import { uniq } from 'lodash';
 import jsonp from 'jsonp';
 import { apiKey, url, sayHi } from './src/config';
+import User, { createURL, gravatar } from './src/user';
 
-console.log(apiKey, url);
+const wes = new User('wes', 'wes@gmail.com', 'wes.com');
 
-const ages = [1,1,4,52,12,4];
-
-console.log(uniq(ages));
-
-
-sayHi('wes');
+const profile = createURL('wes.name');
+const image = gravatar(wes.email);
+console.log(image);
